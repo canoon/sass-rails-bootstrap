@@ -1,6 +1,6 @@
 /* =============================================================
- * bootstrap-search.js v2.0.1
- * http://twitter.github.com/bootstrap/javascript.html#search
+ * bootstrap-typeaheadsearch.js v2.0.1
+ * http://twitter.github.com/bootstrap/javascript.html#typeaheadsearch
  * =============================================================
  * Copyright 2012 Twitter, Inc.
  *
@@ -21,9 +21,9 @@
 
   "use strict"
 
-  var Search = function ( element, options ) {
+  var Typeaheadtypeaheadsearch = function ( element, options ) {
     this.$element = $(element)
-    this.options = $.extend({}, $.fn.search.defaults, options)
+    this.options = $.extend({}, $.fn.typeaheadsearch.defaults, options)
     this.matcher = this.options.matcher || this.matcher
     this.sorter = this.options.sorter || this.sorter
     this.highlighter = this.options.highlighter || this.highlighter
@@ -33,9 +33,9 @@
     this.listen()
   }
 
-  Search.prototype = {
+  Typeaheadtypeaheadsearch.prototype = {
 
-    constructor: Search
+    constructor: Typeaheadtypeaheadsearch
 
   , select: function () {
       var id = this.$menu.find('.active').attr('data-value')
@@ -248,38 +248,38 @@
   }
 
 
-  /* SEARCH PLUGIN DEFINITION
+  /* TYPEAHEADSEARCH PLUGIN DEFINITION
    * =========================== */
 
-  $.fn.search = function ( option ) {
+  $.fn.typeaheadsearch = function ( option ) {
     return this.each(function () {
       var $this = $(this)
-        , data = $this.data('search')
+        , data = $this.data('typeaheadsearch')
         , options = typeof option == 'object' && option
-      if (!data) $this.data('search', (data = new Search(this, options)))
+      if (!data) $this.data('typeaheadsearch', (data = new Typeaheadtypeaheadsearch(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  $.fn.search.defaults = {
+  $.fn.typeaheadsearch.defaults = {
     source: []
   , items: 8
-  , menu: '<ul class="search dropdown-menu"></ul>'
+  , menu: '<ul class="typeaheadsearch dropdown-menu"></ul>'
   , item: '<li><a href="#"></a></li>'
   }
 
-  $.fn.search.Constructor = Search
+  $.fn.typeaheadsearch.Constructor = Typeaheadtypeaheadsearch
 
 
- /* SEARCH DATA-API
+ /* TYPEAHEADSEARCH DATA-API
   * ================== */
 
   $(function () {
-    $('body').on('focus.search.data-api', '[data-provide="search"]', function (e) {
+    $('body').on('focus.typeaheadsearch.data-api', '[data-provide="typeaheadsearch"]', function (e) {
       var $this = $(this)
-      if ($this.data('search')) return
+      if ($this.data('typeaheadsearch')) return
       e.preventDefault()
-      $this.search($this.data())
+      $this.typeaheadsearch($this.data())
     })
   })
 
