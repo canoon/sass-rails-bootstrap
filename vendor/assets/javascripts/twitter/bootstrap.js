@@ -5,6 +5,7 @@
 //= require twitter/bootstrap/dropdown
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/scrollspy
+//= require twitter/bootstrap/search
 //= require twitter/bootstrap/tab
 //= require twitter/bootstrap/tooltip
 //= require twitter/bootstrap/popover
