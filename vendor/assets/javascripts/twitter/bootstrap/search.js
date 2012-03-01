@@ -256,7 +256,7 @@
       var $this = $(this)
         , data = $this.data('typeaheadsearch')
         , options = typeof option == 'object' && option
-      if (!data) $this.data('typeaheadsearch', (data = new Typeaheadtypeaheadsearch(this, options)))
+      if (!data) $this.data('typeaheadsearch', (data = new Typeahead.typeaheadsearch(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
