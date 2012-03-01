@@ -21,7 +21,7 @@
 
   "use strict"
 
-  var Typeaheadtypeaheadsearch = function ( element, options ) {
+  var Typeaheadsearch = function ( element, options ) {
     this.$element = $(element)
     this.options = $.extend({}, $.fn.typeaheadsearch.defaults, options)
     this.matcher = this.options.matcher || this.matcher
@@ -33,9 +33,9 @@
     this.listen()
   }
 
-  Typeaheadtypeaheadsearch.prototype = {
+  Typeaheadsearch.prototype = {
 
-    constructor: Typeaheadtypeaheadsearch
+    constructor: Typeaheadsearch
 
   , select: function () {
       var id = this.$menu.find('.active').attr('data-value')
@@ -256,7 +256,7 @@
       var $this = $(this)
         , data = $this.data('typeaheadsearch')
         , options = typeof option == 'object' && option
-      if (!data) $this.data('typeaheadsearch', (data = new Typeahead.typeaheadsearch(this, options)))
+      if (!data) $this.data('typeaheadsearch', (data = new Typeaheadsearch(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
@@ -268,7 +268,7 @@
   , item: '<li><a href="#"></a></li>'
   }
 
-  $.fn.typeaheadsearch.Constructor = Typeaheadtypeaheadsearch
+  $.fn.typeaheadsearch.Constructor = Typeaheadsearch
 
 
  /* TYPEAHEADSEARCH DATA-API
